@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include <string>
+#include <string_view>
 
-size_t iqTest(std::string numbers);
+size_t iqTest(std::string_view numbers);
 
 #endif

@@ -1,19 +1,21 @@
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 #include "solution.hpp"
 
 #include <boost/algorithm/string.hpp>
 #include <boost/range/algorithm/copy.hpp>
-
 
 using boost::copy_range;
 using boost::is_from_range;
 using boost::make_split_iterator;
 using boost::token_finder;
 using std::stoll;
+using std::string_view;
 using std::string;
 
 enum class Evenness {Odd, Even};
 
-size_t iqTest(string numbers)
+size_t iqTest(string_view numbers)
 {
 	auto indexOdd = size_t{ 1 };
 	auto indexEven = size_t{ 1 };
