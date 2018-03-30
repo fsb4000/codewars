@@ -6,7 +6,9 @@
   "jsRules": {},
   "rules": { 
     "no-console": false,
-    "no-empty": false
+    "no-empty": false,
+    "typedef": false,
+    "linebreak-style": false
   },
   "rulesDirectory": []
 }
