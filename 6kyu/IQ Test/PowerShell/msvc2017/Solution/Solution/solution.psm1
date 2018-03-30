@@ -4,6 +4,10 @@ Enum Evenness
 	Even
 }
 
+<#
+.SYNOPSIS
+Return index different in evenness number. Indexes start from 1
+#>
 function Get-IqTest ([string]$numbers)
 {
 	[string[]]$separator = [string[]]@(" ")
