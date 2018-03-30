@@ -46,3 +46,8 @@
 */*/Typescript/package-lock.json
 */*/Typescript/.cache-loader/
 */*/Typescript/spec/dist/test.js
+
+# PowerShell
+*/*/PowerShell/msvc2017/Solution/.vs/
+*/*/PowerShell/msvc2017/Solution/Solution/bin/
+*/*/PowerShell/msvc2017/Solution/Solution/obj/
