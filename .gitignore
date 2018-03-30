@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# MSVS folders
+*/*/C++/msvc2017/Test/.vs/
+*/*/C++/msvc2017/Test/Debug/
+*/*/C++/msvc2017/Test/Release/
+*/*/C++/msvc2017/Test/Test/Debug/
+*/*/C++/msvc2017/Test/Test/Release/
+*/*/C++/msvc2017/Test/Test/Test.vcxproj.user
+*/*/C++/msvc2017/Test/Test/x64/
+*/*/C++/msvc2017/Test/x64/
