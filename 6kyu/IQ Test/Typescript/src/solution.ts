@@ -12,7 +12,7 @@ export const iqTest = (numbers: string): number => {
     let indexOdd = 1;
     let whatReturn = Evenness.Odd;
     for (const num of splitted) {
-        if (Number(num) % 2 === 0) {
+        if ((Number(num) & 1) === 0) {
             if (firstEven) {
                 indexEven = currentIndex;
                 firstEven = false;

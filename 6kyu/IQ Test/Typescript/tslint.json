@@ -8,7 +8,8 @@
     "no-console": false,
     "no-empty": false,
     "typedef": false,
-    "linebreak-style": false
+    "linebreak-style": false,
+    "no-bitwise": false
   },
   "rulesDirectory": []
 }
