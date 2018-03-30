@@ -15,31 +15,31 @@ enum class Evenness {Odd, Even};
 
 size_t iqTest(string numbers)
 {
-	auto index_odd = size_t{ 1 };
-	auto index_even = size_t{ 1 };
-	auto first_even = true;
-	auto first_odd = true;
-	auto current_index = size_t{ 1 };
-	auto what_return = Evenness::Odd;
+	auto indexOdd = size_t{ 1 };
+	auto indexEven = size_t{ 1 };
+	auto firstEven = true;
+	auto firstOdd = true;
+	auto currentIndex = size_t{ 1 };
+	auto whatReturn = Evenness::Odd;
 	for (auto it = make_split_iterator(numbers, token_finder(is_from_range(' ', ' ')));
-		(it != decltype(it)()); ++it, ++current_index)
+		(it != decltype(it)()); ++it, ++currentIndex)
 	{
 		if (stoll(copy_range<string>(*it)) % 2 == 0) {
-			if (first_even) {
-				index_even = current_index;
-				first_even = false;
+			if (firstEven) {
+				indexEven = currentIndex;
+				firstEven = false;
 			}
 		}
 		else {
-			if (first_odd) {
-				index_odd = current_index;
-				first_odd = false;
+			if (firstOdd) {
+				indexOdd = currentIndex;
+				firstOdd = false;
 			}
 			else {
-				what_return = Evenness::Even;
+				whatReturn = Evenness::Even;
 			}
 		}
 		
 	}
-	return (what_return == Evenness::Even) ? index_even : index_odd;
+	return (whatReturn == Evenness::Even) ? indexEven : indexOdd;
 }
