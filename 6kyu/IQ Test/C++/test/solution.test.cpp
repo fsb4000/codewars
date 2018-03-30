@@ -18,3 +18,19 @@ BOOST_AUTO_TEST_CASE(Even)
 
 	BOOST_CHECK_EQUAL(expected, actual);
 }
+
+BOOST_AUTO_TEST_CASE(LastEven)
+{
+	int32_t expected = 4;
+	int32_t actual = iqTest("1 1 1 2");
+
+	BOOST_CHECK_EQUAL(expected, actual);
+}
+
+BOOST_AUTO_TEST_CASE(LastOdd)
+{
+	int32_t expected = 5;
+	int32_t actual = iqTest("2 4 8 10 7");
+
+	BOOST_CHECK_EQUAL(expected, actual);
+}

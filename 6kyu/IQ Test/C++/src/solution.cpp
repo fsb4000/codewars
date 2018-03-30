@@ -11,6 +11,8 @@ using boost::token_finder;
 using std::stoll;
 using std::string;
 
+enum class Evenness {Odd, Even};
+
 size_t iqTest(string numbers)
 {
 	auto index_odd = size_t{ 1 };
@@ -18,16 +20,14 @@ size_t iqTest(string numbers)
 	auto first_even = true;
 	auto first_odd = true;
 	auto current_index = size_t{ 1 };
+	auto what_return = Evenness::Odd;
 	for (auto it = make_split_iterator(numbers, token_finder(is_from_range(' ', ' ')));
-		it != decltype(it)(); ++it, ++current_index)
+		(it != decltype(it)()); ++it, ++current_index)
 	{
 		if (stoll(copy_range<string>(*it)) % 2 == 0) {
 			if (first_even) {
 				index_even = current_index;
 				first_even = false;
-			}
-			else if (!first_odd) {
-				return index_odd;
 			}
 		}
 		else {
@@ -35,11 +35,11 @@ size_t iqTest(string numbers)
 				index_odd = current_index;
 				first_odd = false;
 			}
-			else if (!first_even) {
-				return index_even;
+			else {
+				what_return = Evenness::Even;
 			}
 		}
 		
 	}
-	return 1;
+	return (what_return == Evenness::Even) ? index_even : index_odd;
 }
