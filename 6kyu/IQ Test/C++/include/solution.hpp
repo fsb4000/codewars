@@ -5,6 +5,6 @@
 
 #include <string>
 
-int32_t iqTest(std::string numbers);
+size_t iqTest(std::string numbers);
 
 #endif
