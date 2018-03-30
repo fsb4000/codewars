@@ -2,7 +2,14 @@
 // PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 #include "solution.hpp"
 
-int solve(const std::string& str, int index)
+#include <gsl-lite.hpp>
+
+#include <limits>
+
+using gsl::narrow_cast;
+using std::numeric_limits;
+
+int solve(const std::string& str, size_t index)
 {
 	const char openBrace = '(';
 	const char closeBrace = ')';
@@ -10,7 +17,7 @@ int solve(const std::string& str, int index)
 	if (str.at(index) != openBrace) {
 		return error;
 	}
-	int numberOpenBraces = 1;
+	size_t numberOpenBraces = 1;
 	for (size_t i = index + 1ULL; i < str.size(); ++i) {
 		switch (str.at(i)) {
 		case openBrace: 
@@ -24,7 +31,10 @@ int solve(const std::string& str, int index)
 			break;
 		}
 		if (numberOpenBraces == 0) {
-			return i;
+			if (i > narrow_cast<size_t>(numeric_limits<int>::max())) {
+				return error;
+			}
+			return narrow_cast<int>(i);
 		}
 	}
 	return error;
