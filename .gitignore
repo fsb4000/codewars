@@ -44,3 +44,5 @@
 # Typescript
 */*/Typescript/node_modules/
 */*/Typescript/package-lock.json
+*/*/Typescript/.cache-loader/
+*/*/Typescript/spec/dist/test.js
