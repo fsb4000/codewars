@@ -6,7 +6,7 @@
 
 #include <limits>
 
-using gsl::narrow_cast;
+using gsl::narrow;
 using std::numeric_limits;
 
 int solve(const std::string& str, size_t index)
@@ -31,10 +31,10 @@ int solve(const std::string& str, size_t index)
 			break;
 		}
 		if (numberOpenBraces == 0) {
-			if (i > narrow_cast<size_t>(numeric_limits<int>::max())) {
+			if (i > narrow<size_t>(numeric_limits<int>::max())) {
 				return error;
 			}
-			return narrow_cast<int>(i);
+			return narrow<int>(i);
 		}
 	}
 	return error;
