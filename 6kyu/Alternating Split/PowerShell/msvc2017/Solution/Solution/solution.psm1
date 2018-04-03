@@ -27,11 +27,11 @@ function Decrypt ([string]$encryptedText, [int]$n)
 	for ($i = 0 ; $i -lt $encryptedText.Length; $i++) {
 		if (($i % 2) -eq 1) {
 			[void]$res.Append($encryptedText[[math]::Truncate($i / 2)]);
-		}
-		else {
+		} else {
 			[void]$res.Append($encryptedText[[math]::Truncate($i / 2) + [math]::Truncate($encryptedText.Length / 2)]);
 		}
 	}
+
 	return decrypt $res.ToString() ($n - 1);
 }
 
