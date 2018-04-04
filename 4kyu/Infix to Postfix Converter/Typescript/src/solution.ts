@@ -53,7 +53,8 @@ export const toPostfix = (infix: string): string => {
                         res += func.pop();
                     }
                 } else {
-                    while ((func.length !== 0) && getOperatorPriority(c) < getOperatorPriority(func[func.length - 1])) {
+                    while ((func.length !== 0) &&
+                        getOperatorPriority(c) < getOperatorPriority(func[func.length - 1])) {
                         res += func.pop();
                     }
                 }

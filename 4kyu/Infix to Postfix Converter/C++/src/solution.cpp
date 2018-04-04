@@ -37,6 +37,7 @@ bool isLeftAssociativity(char c) noexcept{
 	if (c == '^') {
 		return false;
 	}
+
 	return true;
 }
 
@@ -46,26 +47,22 @@ string to_postfix(const string& infix) {
 	for (const char c : infix) {
 		if (isdigit(static_cast<unsigned char>(c))) {
 			res += c;
-		} 
-		else if (c == '(') {
+		} else if (c == '(') {
 			func.push(c);
-		}
-		else if (c == ')') {
+		} else if (c == ')') {
 			while (func.top() != '(') {
 				res += func.top();
 				func.pop();
 			}
 			func.pop();
-		} 
-		else if (isOperator(c)) {
+		} else if (isOperator(c)) {
 			if (!func.empty()) {
 				if (isLeftAssociativity(c)) {
 					while (!func.empty() && getOperatorPriority(c) <= getOperatorPriority(func.top())) {
 						res += func.top();
 						func.pop();
 					}
-				}
-				else {
+				} else {
 					while (!func.empty() && getOperatorPriority(c) < getOperatorPriority(func.top())) {
 						res += func.top();
 						func.pop();
@@ -79,5 +76,6 @@ string to_postfix(const string& infix) {
 		res += func.top();
 		func.pop();
 	}
+
 	return res;
 }
