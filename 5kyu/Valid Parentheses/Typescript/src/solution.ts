@@ -1,14 +1,13 @@
 export const validParentheses = (parens: string): boolean => {
     let brackets = 0;
-    for (let i = 0; i < parens.length; ++i) {
-        const c = parens.charAt(i);
+    for (const c of parens) {
         if (c === "(") {
             ++brackets;
         } else if (c === ")") {
             --brackets;
-        }
-        if (brackets < 0) {
-            return false;
+            if (brackets < 0) {
+                return false;
+            }
         }
     }
 
