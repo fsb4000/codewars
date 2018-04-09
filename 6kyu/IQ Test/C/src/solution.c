@@ -20,6 +20,7 @@ size_t iqTest(const char* numbers) noexcept
 	size_t currentIndex = 1;
 	enum Evenness whatReturn = Odd;
 	char* input = strdup(numbers);
+	assert (input != nullptr);
     for (char* token = strtok(input, " ");token != nullptr;token = strtok(NULL, " "), ++currentIndex) {
       if (atoll(token) % 2 == 0) {
 			if (firstEven) {
