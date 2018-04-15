@@ -51,3 +51,6 @@
 */*/PowerShell/msvc2017/Solution/.vs/
 */*/PowerShell/msvc2017/Solution/Solution/bin/
 */*/PowerShell/msvc2017/Solution/Solution/obj/
+
+# VSCode
+*/*/*/.vscode/
