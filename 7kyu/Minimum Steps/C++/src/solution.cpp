@@ -28,9 +28,7 @@ int minimumSteps(const std::vector <int>& numbers, int input)
 	int step = 0;
 	while (sum < input && q.size() >= 2) {
 		const auto smallest = q.top(); q.pop();
-		const auto secondSmallest = q.top(); q.pop();
-		sum = smallest + secondSmallest;
-		q.push(sum);
+		sum += smallest;
 		++step;
 	}
 
